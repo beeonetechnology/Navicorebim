@@ -36,7 +36,7 @@ const Services = () => {
       features: ["Student Training & Internships with project-based learning", "Corporate Training tailored to industry workflows", "Industry-experienced trainers and real project datasets", "Flexible learning schedules (online & in-person)"],
       image: buildingProject4
     },
-   
+
   ];
 
   const process = [
@@ -71,17 +71,17 @@ const Services = () => {
     <div className="min-h-screen pt-0">
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${buildingProject})` }}
         />
         <div className="absolute inset-0 bg-gradient-overlay" />
-        
+
         <div className="relative z-10 container mx-auto px-6 bg-gradient-primary bg-clip-text text-[#6ddcf5] text-center">
-          <h1 className="text-5xl font-bold mb-6 animate-slide-up pt-12">
+        <h1 className=" text-4xl md:text-5xl font-bold mb-6 animate-slide-up pt-12">
             Our Services
           </h1>
-          <p className="text-2xl text-gray-200 max-w-3xl mx-auto animate-fade-in-delay">
+          <p className=" text-base md:text-2xl text-gray-200 max-w-3xl mx-auto animate-fade-in-delay">
 Transforming Ideas into Intelligent Models
 
           </p>
@@ -92,25 +92,25 @@ Transforming Ideas into Intelligent Models
       <section className="py-24">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-[#0799b3] mb-6">
+          <h2 className=" text-4xl md:text-5xl font-bold text-[#0799b3] mb-6">
               What We Do
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-             We bring designs to life through advanced BIM solutions. Whether it’s a home, a high-rise, or a factory, NavicoreBIM’s team integrates technology and creativity to streamline workflows, 
+            <p className="text-base  md:text-xl text-gray-600 max-w-2xl mx-auto">
+             We bring designs to life through advanced BIM solutions. Whether it’s a home, a high-rise, or a factory, NavicoreBIM’s team integrates technology and creativity to streamline workflows,
              eliminate errors, and make construction smarter from concept to completion
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {services.map((service, index) => (
-              <div 
+              <div
                 key={service.title}
                 className="group bg-white rounded-2xl shadow-elegant hover-lift overflow-hidden animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="relative h-74 overflow-hidden">
-                  <img 
-                    src={service.image} 
+                  <img
+                    src={service.image}
                     alt={service.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-elegant"
                   />
@@ -121,13 +121,13 @@ Transforming Ideas into Intelligent Models
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="p-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-smooth">
                     {service.title}
                   </h3>
                   <p className="text-gray-600 mb-6">{service.description}</p>
-                  
+
                   <ul className="space-y-3 mb-6">
                     {service.features.map((feature) => (
                       <li key={feature} className="flex items-center text-gray-700">
@@ -136,9 +136,9 @@ Transforming Ideas into Intelligent Models
                       </li>
                     ))}
                   </ul>
-                  
-                  <Button 
-                    variant="outline" 
+
+                  <Button
+                    variant="outline"
                     className="group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-smooth"
                   >
                     Learn More
@@ -155,17 +155,17 @@ Transforming Ideas into Intelligent Models
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">
+           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
               Our Process
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base md:text-xl text-gray-600 max-w-2xl mx-auto">
               A proven methodology that ensures successful project delivery
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
             {process.map((step, index) => (
-              <div 
+              <div
                 key={step.step}
                 className="text-center group animate-scale-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
@@ -191,15 +191,15 @@ Transforming Ideas into Intelligent Models
       {/* CTA Section */}
       <section className="py-24 bg-gradient-dark text-white">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-5xl font-bold mb-6">
+          <h2 className=" text-3xl md:text-5xl font-bold mb-6">
             Ready to Get Started?
           </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-base md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Contact us today to discuss your project and receive a detailed proposal
           </p>
           <Link to="/contact">
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             className=" bg-gradient-primary text-gray-700 hover:scale-105 transition-elegant shadow-luxury text-lg px-12 py-4"
           >
             Request Consultation

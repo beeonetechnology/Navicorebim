@@ -1,14 +1,20 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, Award, Users, Building, } from "lucide-react";
+import { ArrowRight, Award, Users, Building } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import heroImage from "@/assets/hero-construction.jpg";
 import luxuryHome from "@/assets/luxury-home.jpg";
 import buildingProject from "@/assets/building-project.jpg";
 import luxuryInterior from "@/assets/luxury-interior.jpg";
 import { Link } from "react-router-dom";
 const Hero = () => {
-  const [count, setCount] = useState({ projects: 0, clients: 0, team:0 });
+  const [count, setCount] = useState({ projects: 0, clients: 0, team: 0 });
   const [api, setApi] = useState<any>();
 
   const heroSlides = [
@@ -16,7 +22,8 @@ const Hero = () => {
       image: heroImage,
       title: "NavicoreBIM",
       subtitle: "Let's BIM",
-      description: "Comprehensive BIM solutions delivering precision modeling, seamless coordination, and efficient project execution.",
+      description:
+        "Comprehensive BIM solutions delivering precision modeling, seamless coordination, and efficient project execution.",
       cta: "View Projects",
     },
     {
@@ -47,35 +54,33 @@ const Hero = () => {
 
   // Counter Animation
   useEffect(() => {
-  const targets = { 
-    projects: 50, 
-    clients: 100,
-    team: 10             // team members
-  };
+    const targets = {
+      projects: 50,
+      clients: 100,
+      team: 10, // team members
+    };
 
-  const duration = 2000;
-  const steps = 60;
-  const stepDuration = duration / steps;
+    const duration = 2000;
+    const steps = 60;
+    const stepDuration = duration / steps;
 
-  let step = 0;
-  const timer = setInterval(() => {
-    step++;
-    const progress = step / steps;
-    const easeOut = 1 - Math.pow(1 - progress, 3);
+    let step = 0;
+    const timer = setInterval(() => {
+      step++;
+      const progress = step / steps;
+      const easeOut = 1 - Math.pow(1 - progress, 3);
 
-    setCount({
-      projects: Math.floor(targets.projects * easeOut),
-      clients: Math.floor(targets.clients * easeOut),
-      team: Math.floor(targets.team * easeOut),
+      setCount({
+        projects: Math.floor(targets.projects * easeOut),
+        clients: Math.floor(targets.clients * easeOut),
+        team: Math.floor(targets.team * easeOut),
+      });
 
-    });
+      if (step >= steps) clearInterval(timer);
+    }, stepDuration);
 
-    if (step >= steps) clearInterval(timer);
-  }, stepDuration);
-
-  return () => clearInterval(timer);
-}, []);
-
+    return () => clearInterval(timer);
+  }, []);
 
   // Autoplay Carousel
   useEffect(() => {
@@ -86,7 +91,11 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen overflow-hidden">
-      <Carousel setApi={setApi} className="h-full" opts={{ align: "start", loop: true }}>
+      <Carousel
+        setApi={setApi}
+        className="h-full"
+        opts={{ align: "start", loop: true }}
+      >
         <CarouselContent className="h-full">
           {heroSlides.map((slide, index) => (
             <CarouselItem key={index} className="h-screen">
@@ -113,43 +122,20 @@ const Hero = () => {
                 {/* Content */}
                 <div className="relative z-10 container mx-auto px-5 text-center text-white">
                   <div className="max-w-4xl mx-auto">
-                    <h1 className="text-5xl lg:text-6xl xl:text-8xl font-bold mb-6 animate-hero-title pt-16 pb--4">
-                      <span className="block animate-slide-in-left animate-delay-100">{slide.title}</span>
-                      <span className="block text-[#6ddcf5] animate-slide-in-right animate-delay-300">{slide.subtitle}</span>
+                    <h1 className=" text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold mb-6 animate-hero-title pt-16 pb--4">
+                      <span className="block animate-slide-in-left animate-delay-100">
+                        {slide.title}
+                      </span>
+                      <span className="block text-[#6ddcf5] animate-slide-in-right animate-delay-300">
+                        {slide.subtitle}
+                      </span>
                     </h1>
 
-                    <p className="text-xl lg:text-xl mb-8 text-gray-200 animate-slide-in-up animate-delay-500 max-w-2xl mx-auto">
+                    <p className="text-xs md:text-xl lg:text-xl mb-8 text-gray-200 animate-slide-in-up animate-delay-500 max-w-2xl mx-auto">
                       {slide.description}
                     </p>
 
-                   
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-slide-in-up animate-delay-600">
-                    <Link to="/projects">
-                      <Button
-                        size="lg"
-                        style={{ backgroundColor: "#6ddcf5" }}
-                        className="text-gray-900 hover:scale-105 transition-elegant shadow-luxury text-lg px-8 py-4 animate-stagger-slide animate-delay-100"
-                      >
-                        {slide.cta}
-                        <ArrowRight className="ml-2 w-5 h-5" />
-                      </Button>
-                      </Link>
-
-
-<Link to="/contact">
-  <Button
-    size="lg"
-    variant="outline"
-    style={{
-      borderColor: "#0799b3",
-      color: "black",
-      backgroundColor: "#6ddcf5",
-    }}
-    className="text-gray-900 hover:scale-105 transition-elegant shadow-luxury text-lg px-8 py-4 animate-stagger-slide animate-delay-100"
-  >
-    Contact us
-  </Button>
-</Link>
 
                     </div>
 
@@ -159,10 +145,10 @@ const Hero = () => {
                         <div className="flex items-center justify-center mb-4 animate-scale-in animate-delay-200">
                           <Award className="w-8 h-8 text-[#6ddcf5] mr-3" />
                         </div>
-                        <div className="text-4xl lg:text-5xl font-bold text-[#6ddcf5] mb-2 animate-slide-in-up animate-delay-300">
+                        <div className="text-2xl md:text-4xl lg:text-5xl font-bold text-[#6ddcf5] mb-2 animate-slide-in-up animate-delay-300">
                           {count.team}+
                         </div>
-                        <div className="text-gray-300 font-medium animate-fade-in-delay animate-delay-400">
+                        <div className=" text-sm md:text-base text-gray-300 font-medium animate-fade-in-delay animate-delay-400 ">
                           Team members
                         </div>
                       </div>
@@ -171,10 +157,10 @@ const Hero = () => {
                         <div className="flex items-center justify-center mb-4 animate-scale-in animate-delay-300">
                           <Building className="w-8 h-8 text-[#6ddcf5] mr-3" />
                         </div>
-                        <div className="text-4xl lg:text-5xl font-bold text-[#6ddcf5] mb-2 animate-slide-in-up animate-delay-400">
+                        <div className=" text-2xl md:text-4xl lg:text-5xl font-bold text-[#6ddcf5] mb-2 animate-slide-in-up animate-delay-400">
                           {count.projects}+
                         </div>
-                        <div className="text-gray-300 font-medium animate-fade-in-delay animate-delay-500">
+                        <div className=" text-sm md:text-base text-gray-300 font-medium animate-fade-in-delay animate-delay-500">
                           Projects Completed
                         </div>
                       </div>
@@ -183,10 +169,10 @@ const Hero = () => {
                         <div className="flex items-center justify-center mb-4 animate-scale-in animate-delay-400">
                           <Users className="w-8 h-8 text-[#6ddcf5] mr-3" />
                         </div>
-                        <div className="text-4xl lg:text-5xl font-bold text-[#6ddcf5] mb-2 animate-slide-in-up animate-delay-500">
+                        <div className="text-2xl md:text-4xl lg:text-5xl font-bold text-[#6ddcf5] mb-2 animate-slide-in-up animate-delay-500">
                           {count.clients}+
                         </div>
-                        <div className="text-gray-300 font-medium animate-fade-in-delay animate-delay-600">
+                        <div className="text-sm md:text-base text-gray-300 font-medium animate-fade-in-delay animate-delay-600">
                           Satisfied Clients
                         </div>
                       </div>

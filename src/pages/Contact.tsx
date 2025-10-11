@@ -57,8 +57,8 @@ const Contact = () => {
   };
 
   const handleSend = () => {
-    const phone = "7994433077"; 
-    
+    const phone = "7994433077";
+
     const message = `
 Name: ${formData.firstName}
 Email: ${formData.email}
@@ -81,10 +81,10 @@ Project Details: ${formData.message}
         <div className="absolute inset-0 bg-gradient-overlay" />
 
         <div className="relative z-10 container mx-auto px-6 bg-gradient-primary bg-clip-text text-[#6ddcf5] text-center">
-          <h1 className="text-6xl font-bold mb-6 animate-slide-up pt-10 ">
+          <h1 className="text-3xl md:text-6xl font-bold mb-6 animate-slide-up pt-10 ">
             Contact Us
           </h1>
-          <p className="text-2xl text-gray-200 max-w-3xl mx-auto animate-fade-in-delay">
+          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto animate-fade-in-delay">
             Ready to start your next project? Get in touch with our expert team
           </p>
         </div>
@@ -124,7 +124,7 @@ Project Details: ${formData.message}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
             <div className="animate-slide-up">
-              <h2 className="text-4xl font-bold text-gray-900 mb-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">
                 Get a Free Quote
               </h2>
               <p className="text-lg text-gray-600 mb-8">
@@ -210,7 +210,7 @@ Project Details: ${formData.message}
 
            {/* Map Placeholder */}
 <div className="animate-fade-in-delay">
-  <div className="bg-gray-300 rounded-2xl h-[500px] lg:h-[100vh] overflow-hidden shadow-elegant">
+  <div className="bg-gray-300 rounded-2xl h-[300px]  md:h-[500px] lg:h-[100vh] overflow-hidden shadow-elegant">
    <iframe
   title="Kakkanad Map"
   src="https://www.bing.com/maps/embed?h=600&w=800&cp=10.0158605~76.3418666&lvl=14&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
@@ -224,16 +224,16 @@ Project Details: ${formData.message}
           </div>
         </div>
       </section>
-      {/* Quick Contact */} <section className="py-24 bg-gradient-dark text-white"> 
-        <div className="container mx-auto px-6 text-center"> 
-          <h2 className="text-5xl font-bold mb-6"> Need Immediate Assistance? </h2>
-           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto"> For urgent matters or emergency services, contact us directly </p>
+      {/* Quick Contact */} <section className="py-24 bg-gradient-dark text-white">
+        <div className="container mx-auto px-6 text-center">
+         <h2 className="text-2xl md:text-5xl font-bold mb-6"> Need Immediate Assistance? </h2>
+           <p className="text-base md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto"> For urgent matters or emergency services, contact us directly </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-               <Button 
-  size="lg" 
+               <Button
+  size="lg"
   className="bg-gradient-primary text-white  hover:text-gray-700 hover:scale-105 transition-elegant shadow-luxury text-lg px-8 py-4"
-> 
-  <Phone className="mr-2 w-5 h-5" /> Call Now: +91 7994433077, +91 7306270720
+>
+  <Phone className="mr-2 w-5 h-5" />7994433077,7306270720
 </Button>
 
 

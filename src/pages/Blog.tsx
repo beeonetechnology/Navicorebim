@@ -114,53 +114,53 @@ const Blog = () => {
     <div className="min-h-screen pt-0">
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${buildingProject})` }}
         />
         <div className="absolute inset-0 bg-gradient-overlay" />
-        
+
         <div className="relative z-10 container mx-auto px-6 text-[#6ddcf5] text-center pt-10">
-          <h1 className="text-6xl font-bold mb-6 animate-slide-up">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-slide-up">
            News & Blog
 
 
           </h1>
-          <p className="text-2xl text-gray-200 max-w-3xl mx-auto animate-fade-in-delay">
+          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto animate-fade-in-delay">
            Insights & Updates from the World of BIM
           </p>
           <p className="text-l text-gray-200 max-w-3xl mx-auto animate-fade-in-delay pt-5">
-            
+
 Stay tuned for updated engineering innovations, BIM tips, and MEP industry trends.
 
           </p>
         </div>
       </section>
 
-    
+
 
       {/* Blog Posts Grid */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">
+            <h2 className=" text-3xl md:text-5xl font-bold text-gray-900 mb-6">
               Latest Articles
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base md:text-xl text-gray-600 max-w-2xl mx-auto">
               Stay updated with the latest trends and insights in construction
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post, index) => (
-              <article 
+              <article
                 key={post.id}
                 className="bg-white rounded-2xl shadow-elegant hover-lift overflow-hidden cursor-pointer animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="relative h-64 overflow-hidden">
-                  <img 
-                    src={post.image} 
+                  <img
+                    src={post.image}
                     alt={post.title}
                     className="w-full h-full object-cover hover:scale-110 transition-elegant"
                   />
@@ -170,7 +170,7 @@ Stay tuned for updated engineering innovations, BIM tips, and MEP industry trend
                     </span>
                   </div>
                 </div>
-                
+
                 <div className="p-6">
                   <div className="flex items-center gap-4 text-xs text-gray-500 mb-4">
                     <span className="flex items-center">
@@ -179,15 +179,15 @@ Stay tuned for updated engineering innovations, BIM tips, and MEP industry trend
                     </span>
                     <span>{post.readTime}</span>
                   </div>
-                  
+
                   <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-primary transition-smooth line-clamp-2">
                     {post.title}
                   </h3>
-                  
+
                   <p className="text-gray-600 mb-4 line-clamp-3">
                     {post.excerpt}
                   </p>
-                  
+
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
                       <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center mr-3">
@@ -195,20 +195,20 @@ Stay tuned for updated engineering innovations, BIM tips, and MEP industry trend
                       </div>
                       <span className="text-sm font-medium text-gray-700">{post.author}</span>
                     </div>
-                    
+
                     <Button variant="ghost" size="sm" className="hover:text-primary">
                       <ArrowRight className="w-4 h-4" />
                     </Button>
-                   
+
                   </div>
                 </div>
               </article>
             ))}
           </div>
-          
+
           <div className="text-center mt-12">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-gradient-primary hover:scale-105 transition-elegant shadow-elegant"
             >
               Load More Articles
@@ -218,18 +218,20 @@ Stay tuned for updated engineering innovations, BIM tips, and MEP industry trend
       </section>
 
       {/* Newsletter */}
-      
+
       {/* CTA Section */}
       <section className="py-24 bg-primary text-white">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-5xl font-bold mb-6">Start Your Next Project</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Ready to create something extraordinary? Let's discuss your vision and bring it to life.
-          </p>
+          <h2 className=" text-2xl md:text-5xl font-bold text-white mb-6">
+              Latest Articles
+            </h2>
+            <p className="text-base md:text-xl text-white max-w-2xl mx-auto">
+              Stay updated with the latest trends and insights in construction
+            </p>
           <Link to="/contact">
           <Button
             size="lg"
-            className="bg-gradient-primary text-gray-900 hover:scale-105 transition-elegant shadow-luxury text-lg px-12 py-4"
+            className="mt-4 bg-gradient-primary text-white hover:scale-105 transition-elegant shadow-luxury text-lg px-12 py-4"
           >
             Schedule Consultation
           </Button>

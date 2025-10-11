@@ -143,10 +143,10 @@ const filteredProjects =
         />
         <div className="absolute inset-0 bg-gradient-overlay" />
         <div className="relative z-10 container mx-auto px-6 text-white text-center">
-          <h1 className="text-5xl font-bold mb-6 animate-slide-up pt-10 bg-gradient-primary bg-clip-text text-[#6ddcf5]">
+          <h1 className="text-3xl md:text-5xl font-bold mb-6 animate-slide-up pt-10 bg-gradient-primary bg-clip-text text-[#6ddcf5]">
             Our Projects
           </h1>
-          <p className="text-2xl text-gray-200 max-w-3xl mx-auto animate-fade-in-delay">
+          <p className="text-base md:text-2xl text-gray-200 max-w-3xl mx-auto animate-fade-in-delay">
             Showcasing Innovation in Every Build
           </p>
         </div>
@@ -154,7 +154,7 @@ const filteredProjects =
 
       {/* Filter Section */}
       <section
-        className={`py-12 bg-white sticky top-0 z-40 shadow-elegant transition-transform duration-300 ${
+        className={`py-12  bg-white sticky top-0 z-40 shadow-elegant transition-transform duration-300 ${
           isFilterVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
@@ -180,12 +180,12 @@ const filteredProjects =
       </section>
 
       {/* Description */}
-      <p className="text-center text-gray-600 text-xl mt-8 max-w-3xl mx-auto pt-12">
+     <p className="text-sm md:text-xl text-center text-gray-600  mt-8 max-w-3xl mx-auto pt-12">
         Browse our projects by category to quickly explore commercial towers, luxury residences,
         mixed-use developments, and restoration works that reflect our commitment to innovation and
         excellence.
       </p>
-      <p className="text-center text-gray-600 text-xl mt-3 max-w-3xl mx-auto">
+      <p className="text-sm md:text-xl text-center text-gray-600  mt-3 max-w-3xl mx-auto">
         From high-rise buildings to industrial facilities, we have experienced team to deliver MEP
         designs and BIM solutions for projects across following sectors:
       </p>
@@ -291,8 +291,8 @@ const filteredProjects =
       {/* CTA Section */}
       <section className="py-24 bg-primary text-white">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-5xl font-bold mb-6">Start Your Next Project</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+       <h2 className=" text-2xl md:text-5xl font-bold mb-6">Start Your Next Project</h2>
+          <p className=" text-base md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Ready to create something extraordinary? Let's discuss your vision and bring it to life.
           </p>
           <Link to="/contact">

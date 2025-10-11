@@ -17,7 +17,7 @@ import {
   Import
 } from 'lucide-react';
 import logo from "@/assets/logo-4 copy.png"
-
+import { Link } from "react-router-dom";
 
 
 interface Stat {
@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-1">
             <div className="flex items-center mb-3 pb-2">
   <img
-    src={logo} 
+    src={logo}
     alt="NavicoreBIM Logo"
     className="w-29 h-28 object-contain rounded-lg mr-2"
   />
@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
             </p>
            <div className="flex space-x-4">
   {[
-   
+
     { Icon: Linkedin, link: "https://www.linkedin.com/company/navicorebim/" },
   ].map(({ Icon, link }, index) => (
     <a
@@ -224,25 +224,27 @@ const Footer: React.FC = () => {
               <h5 className="text-lg font-semibold mb-2">Stay Updated</h5>
               <p className="text-slate-300">Get the latest news and updates from our projects.</p>
             </div>
-            <div className="flex w-full md:w-auto">
-              <input
-  type="email"
-  placeholder="Enter your email"
-  className="flex-1 md:w-80 px-4 py-3 bg-slate-800 border border-[#0799b3] rounded-l-lg 
-             focus:outline-none focus:border-[#05b5d1] 
-             text-white placeholder-slate-400"
-/>
+            <div className="flex flex-col sm:flex-row w-full sm:w-auto">
+  <input
+    type="email"
+    placeholder="Enter your email"
+    className="w-full sm:w-80 px-4 py-2 bg-slate-800 border border-[#0799b3]
+               rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none
+               focus:outline-none focus:border-[#05b5d1]
+               text-white placeholder-slate-400"
+  />
 
-             <button
-  type="button"
-  className="px-6 py-3 bg-gradient-to-r from-[#0799b3] to-[#05b5d1] rounded-r-lg 
-             hover:from-[#068aa1] hover:to-[#049fb9] 
-             transition-all duration-300 font-semibold text-white"
->
-  Subscribe
-</button>
-
-            </div>
+  <Link
+    to="/contact"
+    className="px-4 py-2 bg-gradient-to-r from-[#0799b3] to-[#05b5d1]
+               rounded-b-lg sm:rounded-r-lg sm:rounded-bl-none
+               hover:from-[#068aa1] hover:to-[#049fb9]
+               transition-all duration-300 font-semibold text-white
+               text-center"
+  >
+    Subscribe
+  </Link>
+</div>
           </div>
         </div>
       </div>
