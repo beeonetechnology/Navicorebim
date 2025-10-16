@@ -1,20 +1,15 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, Award, Users, Building } from "lucide-react";
+import { ArrowRight, Award, Users, Building, } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import heroImage from "@/assets/hero-construction.jpg";
-import luxuryHome from "@/assets/luxury-home.jpg";
+// import luxuryHome from "@/assets/retrofit-house.jpg";
 import buildingProject from "@/assets/building-project.jpg";
-import luxuryInterior from "@/assets/luxury-interior.jpg";
+import luxuryInterior from "@/assets/1000011123.jpg";
+import bimEducationImage from "@/assets/building-construction-work-site.jpg";
 import { Link } from "react-router-dom";
 const Hero = () => {
-  const [count, setCount] = useState({ projects: 0, clients: 0, team: 0 });
+  const [count, setCount] = useState({ projects: 0, clients: 0, team:0 });
   const [api, setApi] = useState<any>();
 
   const heroSlides = [
@@ -22,18 +17,18 @@ const Hero = () => {
       image: heroImage,
       title: "NavicoreBIM",
       subtitle: "Let's BIM",
-      description:
-        "Comprehensive BIM solutions delivering precision modeling, seamless coordination, and efficient project execution.",
+      description: "Comprehensive BIM solutions delivering precision modeling, seamless coordination, and efficient project execution.",
       cta: "View Projects",
     },
-    {
-      image: luxuryHome,
-      title: "Luxury",
-      subtitle: "Residential",
-      description:
-        "Transform your vision into reality with our premium residential construction services and bespoke architectural solutions.",
-      cta: "View Projects",
-    },
+    // {
+    //   image: luxuryHome,
+    //   title: "Luxury",
+    //   subtitle: "Residential",
+    //   description:
+    //     "Transform your vision into reality with our premium residential construction services and bespoke architectural solutions.",
+    //   cta: "View Projects",
+    // },
+    
     {
       image: buildingProject,
       title: "Commercial",
@@ -42,45 +37,57 @@ const Hero = () => {
         "Industry-leading commercial construction with cutting-edge technology and uncompromising quality standards.",
       cta: "View Projects",
     },
+   
     {
-      image: luxuryInterior,
-      title: "Interior",
-      subtitle: "Mastery",
-      description:
-        "Sophisticated interior designs that blend functionality with luxury, creating spaces that inspire and elevate.",
-      cta: "View Projects",
-    },
+  image: luxuryInterior, // <-- replace with your actual image import
+  title: "Retrofit",
+  subtitle: "MEP Services",
+  description:
+    "Upgrade and optimize existing building systems with our expert retrofit MEP services, enhancing energy efficiency, performance, and sustainability.",
+  cta: "View Projects",
+},
+ {
+  image: bimEducationImage, // <-- replace with your actual BIM education image import
+  title: "BIM Education",
+  subtitle: "Training & Courses",
+  description:
+    "Empower your career with our comprehensive BIM education programs, covering advanced modeling, coordination, and digital construction skills for the AEC industry.",
+  cta: "Explore Courses",
+}
+
   ];
 
   // Counter Animation
   useEffect(() => {
-    const targets = {
-      projects: 50,
-      clients: 100,
-      team: 10, // team members
-    };
+  const targets = { 
+    projects: 50, 
+    clients: 100,
+    team: 10             // team members
+  };
 
-    const duration = 2000;
-    const steps = 60;
-    const stepDuration = duration / steps;
+  const duration = 2000;
+  const steps = 60;
+  const stepDuration = duration / steps;
 
-    let step = 0;
-    const timer = setInterval(() => {
-      step++;
-      const progress = step / steps;
-      const easeOut = 1 - Math.pow(1 - progress, 3);
+  let step = 0;
+  const timer = setInterval(() => {
+    step++;
+    const progress = step / steps;
+    const easeOut = 1 - Math.pow(1 - progress, 3);
 
-      setCount({
-        projects: Math.floor(targets.projects * easeOut),
-        clients: Math.floor(targets.clients * easeOut),
-        team: Math.floor(targets.team * easeOut),
-      });
+    setCount({
+      projects: Math.floor(targets.projects * easeOut),
+      clients: Math.floor(targets.clients * easeOut),
+      team: Math.floor(targets.team * easeOut),
 
-      if (step >= steps) clearInterval(timer);
-    }, stepDuration);
+    });
 
-    return () => clearInterval(timer);
-  }, []);
+    if (step >= steps) clearInterval(timer);
+  }, stepDuration);
+
+  return () => clearInterval(timer);
+}, []);
+
 
   // Autoplay Carousel
   useEffect(() => {
@@ -91,11 +98,7 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen overflow-hidden">
-      <Carousel
-        setApi={setApi}
-        className="h-full"
-        opts={{ align: "start", loop: true }}
-      >
+      <Carousel setApi={setApi} className="h-full" opts={{ align: "start", loop: true }}>
         <CarouselContent className="h-full">
           {heroSlides.map((slide, index) => (
             <CarouselItem key={index} className="h-screen">
@@ -122,20 +125,47 @@ const Hero = () => {
                 {/* Content */}
                 <div className="relative z-10 container mx-auto px-5 text-center text-white">
                   <div className="max-w-4xl mx-auto">
-                    <h1 className=" text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold mb-6 animate-hero-title pt-16 pb--4">
-                      <span className="block animate-slide-in-left animate-delay-100">
-                        {slide.title}
-                      </span>
-                      <span className="block text-[#6ddcf5] animate-slide-in-right animate-delay-300">
-                        {slide.subtitle}
-                      </span>
+                    <h1 className="  font-bold mb-6 animate-hero-title pt-16 pb--4">
+                      <span className=" text-4xl md:text-5xl lg:text-6xl xl:text-8xl block animate-slide-in-left animate-delay-100">{slide.title}</span>
+                      <span className=" text-4xl md:text-5xl lg:text-6xl xl:text-8xl block text-[#6ddcf5] animate-slide-in-right animate-delay-300">{slide.subtitle}</span>
                     </h1>
 
-                    <p className="text-xs md:text-xl lg:text-xl mb-8 text-gray-200 animate-slide-in-up animate-delay-500 max-w-2xl mx-auto">
+                    <p className=" text-base  md:text-xl lg:text-xl mb-8 text-gray-200 animate-slide-in-up animate-delay-500 max-w-2xl mx-auto">
                       {slide.description}
                     </p>
 
+                   
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-slide-in-up animate-delay-600">
+                    <Link to="/projects">
+                      <Button
+  size="lg"
+  style={{ backgroundColor: "#6ddcf5" }}
+  className="text-gray-900 hover:scale-105 transition-elegant shadow-luxury 
+             text-sm md:text-lg px-6 py-3 
+             w-40 sm:w-48 md:w-56 lg:w-64 
+             animate-stagger-slide animate-delay-100"
+>
+  {slide.cta}
+  <ArrowRight className="ml-2 w-5 h-5" />
+</Button>
+
+                      </Link>
+
+
+<Link to="/contact">
+  <Button
+    size="lg"
+    variant="outline"
+    style={{
+      borderColor: "#0799b3",
+      color: "black",
+      backgroundColor: "#6ddcf5",
+    }}
+    className="text-gray-900 hover:scale-105 transition-elegant shadow-luxury  text-sm md:text-lg px-8 py-4 animate-stagger-slide animate-delay-100"
+  >
+    Contact us
+  </Button>
+</Link>
 
                     </div>
 

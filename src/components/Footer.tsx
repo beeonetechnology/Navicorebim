@@ -37,11 +37,11 @@ const Footer: React.FC = () => {
   ];
 
   const quickLinks: string[] = [
-    'About Us',
-    'Our Projects',
+    'About',
+    'Projects',
     'Services',
-    'Testimonials',
-    'Careers',
+    'Blog',
+    'FAQ',
     'Contact'
   ];
 
@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-1">
             <div className="flex items-center mb-3 pb-2">
   <img
-    src={logo}
+    src={logo} 
     alt="NavicoreBIM Logo"
     className="w-29 h-28 object-contain rounded-lg mr-2"
   />
@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
             </p>
            <div className="flex space-x-4">
   {[
-
+   
     { Icon: Linkedin, link: "https://www.linkedin.com/company/navicorebim/" },
   ].map(({ Icon, link }, index) => (
     <a
@@ -143,25 +143,28 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xl font-semibold mb-6 relative">
-              Quick Links
-              <div className="absolute -bottom-2 left-0 w-12 h-1 bg-[#0799b3] rounded-full"></div>
-            </h4>
-            <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href="#"
-                    className="text-slate-300 hover:text-[#0799b3] transition-colors duration-200 flex items-center group"
-                  >
-                    <ArrowRight className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform duration-200" />
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
+  <h4 className="text-xl font-semibold mb-6 relative">
+    Quick Links
+    <div className="absolute -bottom-2 left-0 w-12 h-1 bg-[#0799b3] rounded-full"></div>
+  </h4>
+  <ul className="space-y-3">
+    {quickLinks.map((link, index) => {
+      // Convert link text to route path, e.g., "About Us" -> "/about-us"
+      const path = "/" + link.toLowerCase().replace(/\s+/g, '-');
+      return (
+        <li key={index}>
+          <Link
+            to={path}
+            className="text-slate-300 hover:text-[#0799b3] transition-colors duration-200 flex items-center group"
+          >
+            <ArrowRight className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform duration-200" />
+            {link}
+          </Link>
+        </li>
+      );
+    })}
+  </ul>
+</div>
           {/* Contact Info */}
           <div>
             <h4 className="text-xl font-semibold mb-6 relative">
@@ -224,27 +227,28 @@ const Footer: React.FC = () => {
               <h5 className="text-lg font-semibold mb-2">Stay Updated</h5>
               <p className="text-slate-300">Get the latest news and updates from our projects.</p>
             </div>
-            <div className="flex flex-col sm:flex-row w-full sm:w-auto">
+         <div className="flex flex-col sm:flex-row w-full sm:w-auto">
   <input
     type="email"
     placeholder="Enter your email"
-    className="w-full sm:w-80 px-4 py-2 bg-slate-800 border border-[#0799b3]
+    className="w-full sm:w-80 px-4 py-2 bg-slate-800 border border-[#0799b3] 
                rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none
-               focus:outline-none focus:border-[#05b5d1]
+               focus:outline-none focus:border-[#05b5d1] 
                text-white placeholder-slate-400"
   />
 
   <Link
     to="/contact"
-    className="px-4 py-2 bg-gradient-to-r from-[#0799b3] to-[#05b5d1]
+    className="px-4 py-2 bg-gradient-to-r from-[#0799b3] to-[#05b5d1] 
                rounded-b-lg sm:rounded-r-lg sm:rounded-bl-none
-               hover:from-[#068aa1] hover:to-[#049fb9]
-               transition-all duration-300 font-semibold text-white
+               hover:from-[#068aa1] hover:to-[#049fb9] 
+               transition-all duration-300 font-semibold text-white 
                text-center"
   >
     Subscribe
   </Link>
 </div>
+
           </div>
         </div>
       </div>

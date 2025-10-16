@@ -31,22 +31,22 @@ const FAQ = () => {
       question: "Can you provide sample BIM outputs before we start?",
       answer: "Yes, we can share non-confidential samples from our portfolio to help you understand the quality and detail of our work."
     },
-
+   
   ];
 
   return (
     <div className="min-h-screen pt-0">
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
-        <div
+        <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${buildingProject})` }}
         />
         <div className="absolute inset-0 bg-gradient-overlay" />
-
+        
         <div className="relative z-10 container mx-auto px-6 text-white text-center">
           <HelpCircle className="w-20 h-20 mx-auto mb-8 text-[#6ddcf5] animate-float" />
-          <h1 className="text-2xl md:text-6xl font-bold mb-6 animate-slide-up text-[#6ddcf5]">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-slide-up text-[#6ddcf5]">
             Frequently Asked Questions
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto animate-fade-in-delay">
@@ -62,7 +62,7 @@ const FAQ = () => {
             {faqData.map((faq, index) => {
               const isOpen = openFAQ === index;
               return (
-                <div
+                <div 
                   key={index}
                   className="bg-white rounded-2xl shadow-elegant overflow-hidden animate-fade-in"
                   style={{ animationDelay: `${index * 0.05}s` }}
@@ -71,16 +71,16 @@ const FAQ = () => {
                     onClick={() => setOpenFAQ(isOpen ? null : index)}
                     className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-smooth focus:outline-none focus:bg-gray-50"
                   >
-                    <h3 className="text-sm md:text-lg font-bold text-gray-900 pr-4">
+                    <h3 className="text-lg font-bold text-gray-900 pr-4">
                       {faq.question}
                     </h3>
-                    <ChevronDown
+                    <ChevronDown 
                       className={`w-6 h-6 text-primary transition-elegant ${
                         isOpen ? 'transform rotate-180' : ''
                       }`}
                     />
                   </button>
-
+                  
                   <div className={`overflow-hidden transition-elegant ${
                     isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                   }`}>
@@ -101,7 +101,7 @@ const FAQ = () => {
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-           <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
               Why Choose NavicoreBIM?
             </h2>
             <p className="text-base md:text-xl text-gray-600 max-w-2xl mx-auto">
@@ -133,21 +133,21 @@ const FAQ = () => {
       {/* Still Have Questions */}
       <section className="py-24 bg-gradient-dark text-white">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-2xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
             Still Have Questions?
           </h2>
           <p className="text-base md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Our expert team is ready to help you with any questions about your construction project
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Button
-              size="lg"
-              className="backgroundColor: [#0799b3] text-white hover:scale-105 transition-elegant shadow-luxury text-lg px-8 py-4"
+            <Button 
+              size="lg" 
+              className="backgroundColor: [#0799b3] text-gray-900 hover:scale-105 transition-elegant shadow-luxury text-lg px-8 py-4"
             >
               <Phone className="mr-2 w-5 h-5" />
-              7994433077; 7306270720
+              Call Us: 7994433077; 7306270720
             </Button>
-
+            
           </div>
         </div>
       </section>
