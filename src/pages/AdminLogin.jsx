@@ -35,7 +35,7 @@ export default function AdminLogin() {
   const handleLogin = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
-      
+
     setLoading(true);
     setError("");
     setMessage("");
@@ -51,8 +51,8 @@ export default function AdminLogin() {
       localStorage.setItem("user", JSON.stringify(data.user));
       navigate("/AdminDashboard");
     } catch (error) {
-      setError(error.message === "Invalid login credentials" ? 
-        "Invalid email or password." : 
+      setError(error.message === "Invalid login credentials" ?
+        "Invalid email or password." :
         "An error occurred. Please try again.");
     } finally { setLoading(false); }
   };
@@ -147,14 +147,14 @@ export default function AdminLogin() {
    <button
   type="submit"
   disabled={loading}
-  className="px-4 py-3 bg-[#0799b3] text-white rounded-lg font-semibold shadow-lg 
-             hover:bg-[#0799b3]/90 transform hover:scale-[1.02] transition-all duration-200 
-             disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group 
+  className="px-4 py-3 bg-[#0799b3] text-white rounded-lg font-semibold shadow-lg
+             hover:bg-[#0799b3]/90 transform hover:scale-[1.02] transition-all duration-200
+             disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group
              block mx-auto"
 >
   <span className="relative z-10">{loading ? "Signing in..." : "Sign In"}</span>
-  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent 
-                  opacity-0 group-hover:opacity-100 transition-opacity duration-500 
+  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent
+                  opacity-0 group-hover:opacity-100 transition-opacity duration-500
                   translate-x-[-100%] group-hover:translate-x-[100%]" />
 </button>
 
@@ -162,7 +162,7 @@ export default function AdminLogin() {
 </div>
           {/* Footer */}
           <div className="mt-8 pt-6 border-t border-white/20 text-center">
-            <p className="text-gray-300 text-sm">&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
+            <p className="text-gray-300 text-sm">&copy; {new Date().getFullYear()} NavicoreBIM. All rights reserved.</p>
           </div>
         </div>
       </div>
