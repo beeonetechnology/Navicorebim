@@ -414,29 +414,7 @@ const uploadImage = async (file) => {
                       onChange={handleChange}
                       className="w-full p-2 text-sm border border-white/20 rounded-md bg-white/5 text-white focus:ring-1 focus:ring-[#0799b3] focus:border-transparent outline-none"
                     />
-                    <select
-                      name="category"
-                      value={form.category}
-                      onChange={handleChange}
-                      className="w-full p-2 border border-white/20 rounded-lg bg-transparent text-white focus:ring-2 focus:ring-[#0799b3] focus:border-transparent outline-none appearance-none"
-                      required
-                    >
-                      <option value="" disabled className="text-gray-300">
-                        Select Category
-                      </option>
-                      <option value="Commercial" className="text-black">
-                        Commercial
-                      </option>
-                      <option value="Residential" className="text-black">
-                        Residential
-                      </option>
-                      <option value="Mixed-Use" className="text-black">
-                        Mixed-Use
-                      </option>
-                      <option value="Renovation" className="text-black">
-                        Renovation
-                      </option>
-                    </select>
+                   
                     <input
                       name="read_time"
                       placeholder="Read Time (e.g., 5 min)"
