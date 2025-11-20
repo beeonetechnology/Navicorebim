@@ -54,7 +54,7 @@ const About = () => {
 },
 {
   icon: BookOpenCheck,
-  title: "Continues Improvement & Learning ",
+  title: "Continuous Improvement & Learning ",
   description: "Always learning, always growing."
 },
 {
